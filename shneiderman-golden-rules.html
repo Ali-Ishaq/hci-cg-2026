@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schneiderman’s Eight Golden Rules – Automatic Syringe Analysis</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      color: #006633;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      color: #663399;
+    }
+
+    h3 {
+      font-size: 1.1em;
+      color: #336666;
+    }
+
+    .intro-box {
+      background-color: #e7f3ff;
+      color: #222222;
+    }
+
+    .ref-box {
+      background-color: #fff3cd;
+      color: #222222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Schneiderman’s Eight Golden Rules</h1>
+    <p>Analysing the Automatic Syringe “Before” and “After” interfaces</p>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="concepts.html">Key Concepts</a>
+        <ul>
+          <li><a href="analysis.html">Interaction Analysis</a></li>
+          <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+          <li><a href="shneiderman-golden-rules.html" aria-current="page">Schneiderman's Rules</a></li>
+          <li><a href="automatic-syringe.html">Automatic Syringe</a></li>
+          <li><a href="who-paid-problem.html">Who Paid Problem</a></li>
+        </ul>
+      </li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="html-errors.html">10 HTML Errors</a></li>
+      <li><a href="assignment01.html">Assignment 01</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="intro-box">
+      <h2>From Calculator to Controller: A Case Study</h2>
+      <p>
+        This page applies <strong>Schneiderman’s Eight Golden Rules for interface design</strong> (Dix et al., Ch. 7, pp. 282–283) to the
+        <strong>Automatic Syringe</strong> case (dose 1372) from Dix et al., HCI 3rd ed., p. 8. We compare the <strong>“Before” calculator model</strong>
+        (numeric keypad) and the <strong>“After” tuning model</strong> (digit-by-digit increment/decrement).
+      </p>
+      <p>
+        The graphic below summarises key issues and improvements. It is consistent with Figure 0.1 in the HCI book and highlights
+        how redesigning the input from a free numeric keypad to a constrained controller supports many of Schneiderman’s rules.
+      </p>
+      <figure>
+        <img src="UI_Evaluation_8Rules.png" alt="Slide-style graphic showing user-centred redesign of an automatic syringe: before calculator design with high error risk; after tuning model with digit-by-digit control; and ideas for further safety and feedback." />
+        <figcaption>User-centred redesign of the automatic syringe user interface (calculator model → tuning model).</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Eight Golden Rules vs. Automatic Syringe Interfaces</h2>
+      <p>
+        For each rule, the table shows how the <strong>“Before” calculator design</strong> violates or weakly supports it, and how the
+        <strong>“After” tuning design</strong> better satisfies the rule. This complements the Norman / GOMS / KLM analysis by focusing
+        on concrete design guidelines
+      </p>
+
+      <table border="1">
+        <caption>Schneiderman’s Eight Golden Rules for the Automatic Syringe (Before vs After)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Rule</th>
+            <th scope="col">“Before” – Calculator model (keypad)</th>
+            <th scope="col">“After” – Tuning model (digit-by-digit)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1. Strive for consistency</th>
+            <td>
+              Layout and behaviour mimic a generic calculator, not a medical controller. The same keypad patterns might mean “calculate”
+              in one context and “deliver dose” in another. There is little alignment with domain expectations (dose setting).
+            </td>
+            <td>
+              Interface is consistent with the concept of <strong>per-digit tuning</strong>. Each digit column behaves the same way
+              (+ increases, − decreases); interaction is consistent across digits and matches the mental model of setting each digit.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">2. Enable frequent users to use shortcuts</th>
+            <td>
+              Numeric entry is fast, but <strong>unsafe shortcuts</strong> dominate: experts may type quickly and become vulnerable to
+              slips with huge consequences (e.g. 13672 vs 1372). There are no safe expert shortcuts beyond raw speed.
+            </td>
+            <td>
+              Frequent users can develop efficient patterns (e.g. starting from a typical default dose, adjusting only one or two digits).
+              Although more button presses are needed, the interaction supports <strong>safe routines</strong> rather than dangerous shortcuts.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">3. Offer informative feedback</th>
+            <td>
+              Feedback is a <strong>single number</strong> on the display. It does not draw attention to which digit changed or indicate that
+              an extra key was pressed. A slip can go unnoticed; feedback is minimal and not informative about potential error.
+            </td>
+            <td>
+              Each button press updates one digit, so the user receives immediate, <stronggranular feedback</strong> about which part of
+              the dose changed. The design can also be extended with warnings and confirmation (as in the graphic) to make feedback
+              more informative (e.g. high-dose warning).
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">4. Design dialogs to yield closure</th>
+            <td>
+              The keypad design behaves like an open-ended calculator: after entering digits, there is no strong sense of “dose set”
+              versus “still editing”. Closure depends on the user’s own judgement; the dialog lacks a clear final step.
+            </td>
+            <td>
+              The tuning model naturally suggests a <strong>final review</strong> step: adjust each digit, then confirm that the four-digit
+              value is correct. Combined with an explicit “commit” action (e.g. physical lever or confirm button), the interaction can
+              provide strong closure (“dose 1372 confirmed”).
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">5. Offer simple error handling / prevent errors</th>
+            <td>
+              A single slip can put the dose out by a factor of 10. There are no physical or logical constraints to <strong>prevent</strong>
+              such errors, and no simple way to detect or correct them. This violates the spirit of “prevent errors whenever possible.”
+            </td>
+            <td>
+              The tuning model <strong>prevents large errors</strong> by constraining input: each action changes one digit by one step.
+              Even if an error occurs, it affects only one digit, and is easy to reverse (press the opposite button). Error handling
+              becomes simple and local, aligning with the rule.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">6. Permit easy reversal of actions</th>
+            <td>
+              Reversing a wrong keypad entry often means <strong>starting over</strong> (clear display, re-type full number). There is no
+              per-digit undo and no obvious “step back” mechanism.
+            </td>
+            <td>
+              Each step (pressing + or −) is easily reversed by pressing the opposite button. Users can “tune” the dose up and down
+              without losing all progress. The interaction naturally supports local, reversible actions.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">7. Support internal locus of control</th>
+            <td>
+              Users may feel that the device is fragile or unpredictable: a tiny slip can have enormous consequences, so the system
+              feels as if it might “betray” them. This undermines the user’s sense of control.
+            </td>
+            <td>
+              By bounding each action and making changes visible and reversible, the tuning model helps users feel that <strong>they</strong>
+              are in control of the syringe, not the other way around. Users can approach dose setting with more confidence.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">8. Reduce short-term memory load</th>
+            <td>
+              Users must keep the full target dose (e.g. 1–3–7–2) and any partial entry in mind while typing. There is no structure to
+              help remember which digits are correct or which ones were just entered.
+            </td>
+            <td>
+              The four-digit display and per-digit controls <strong>externalise memory</strong>: users can see which digits are correct and
+              focus attention on the one being tuned. This reduces short-term memory load and supports accurate checking.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+   <section class="ref-box">
+  <h2>References</h2>
+
+  <p>
+    <strong>Dix et al., Human–Computer Interaction (3rd ed.)</strong> – Introduction,
+    p. 8, Figure 0.1 (Automatic syringe: setting the dose to 1372; effect of one key
+    slip before and after user involvement).
+  </p>
+
+  <p>
+    <strong>Dix et al., Human–Computer Interaction (3rd ed.)</strong> – Chapter 7,
+    pp. 282–283 (Shneiderman’s Eight Golden Rules of Interface Design).
+  </p>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back to Home</a></p>
+    <p><a href="automatic-syringe.html">Automatic Syringe</a></p>
+    <p><a href="assignment01.html">Lab 01 Rules</a></p>
+    <p>&copy; 2026 HCI–CG Course</p>
+  </footer>
+
+</body>
+</html>
+

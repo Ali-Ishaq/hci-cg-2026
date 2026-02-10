@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Who Paid? Problem – Splitwise Case Study</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        color: #222222;
+        background-color: #ffffff;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        color: #663399;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        color: #336666;
+      }
+
+      h3 {
+        font-size: 1.1em;
+        color: #006633;
+      }
+
+      .topic-box {
+        background-color: #e7f3ff;
+        color: #222222;
+      }
+
+      .ref-box {
+        background-color: #fff3cd;
+        color: #222222;
+      }
+      .citation {
+        font-weight: normal;
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The “Who Paid?” Problem</h1>
+      <p>
+        Splitwise as a social coordination system: Norman’s model and GOMS
+        analysis (Dix et al., Ch. 9 &amp; Ch. 12)
+      </p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="concepts.html">Key Concepts</a>
+          <ul>
+            <li><a href="analysis.html">Interaction Analysis</a></li>
+            <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+            <li>
+              <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+            </li>
+            <li><a href="automatic-syringe.html">Automatic Syringe</a></li>
+            <li>
+              <a href="who-paid-problem.html" aria-current="page"
+                >Who Paid Problem</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="html-errors.html">10 HTML Errors</a></li>
+        <li><a href="assignment01.html">Assignment 01</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>The Case Study: Splitwise and the “Who Paid?” Problem</h2>
+        <p>
+          Analyzing <strong>Splitwise</strong> not just as an app, but as a
+          <strong>social coordination system</strong> where interaction design
+          decisions have <strong>emotional consequences</strong>. This isn’t
+          just about money—our social relationships are mediated by technology.
+          The “Who Paid?” problem appears when it is unclear who has paid, who
+          owes what, or whose turn it is to act. Poor design widens the Gulf of
+          Evaluation (users cannot easily perceive or interpret the state) and
+          can cause friction, doubt, and conflict.
+        </p>
+        <p>
+          <strong>Design intent (THINK before sketching):</strong> Before
+          designing screens, we consider the user’s action cycle and the social
+          context. Norman’s seven stages—Goal → Plan → Specify → Execute →
+          Perceive → Interpret → Compare—help us see where design can fail when
+          “who paid?” is ambiguous.
+        </p>
+      </section>
+
+      <section class="topic-box">
+        <h2>Scenarios Where “Who Paid?” Causes Trouble</h2>
+        <ul>
+          <li>
+            <strong>Friends “forgot” to pay</strong> — Was it a slip, or did the
+            system never make “who has paid” visible? Without clear feedback and
+            visible state, people cannot reliably compare outcome to goal; trust
+            suffers.
+          </li>
+          <li>
+            <strong
+              >Trip where one person paid for everything, then chaos
+              ensued</strong
+            >
+            — One user executed many payments; others cannot easily perceive
+            what was paid, interpret who owes whom, or compare against their
+            mental model. The Gulf of Evaluation is wide; settling up becomes
+            emotionally loaded.
+          </li>
+          <li>
+            <strong
+              >Group dinner where the bill split took longer than the
+              meal</strong
+            >
+            — The task (split the bill, record who paid, who owes what) has a
+            complex Plan and Specify; without a clear method and visible state,
+            execution and evaluation drag on. GOMS and KLM help analyse the
+            efficiency of the task; Norman explains the emotional cost when
+            evaluation is hard.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Analysing with Norman and GOMS</h2>
+        <p>
+          Below we analyse the “who paid?” situation in the same way as the
+          Automatic Syringe:
+          <strong>without clear design support</strong> (chaos, ambiguity) vs
+          <strong
+            >with design that supports visibility and coordination.
+          </strong>
+          The purpose is to clearly communicate how
+          <strong>Norman’s model</strong> and <strong>GOMS</strong> give
+          different but complementary views of the same problem (Lab 01).
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          Norman’s Model: The Seven Stages of the Action Cycle
+          <span class="citation">(Dix et al., Ch. 3, pp. 124–127)</span>
+        </h2>
+        <p>
+          Norman’s seven stages (Goal → Plan → Specify → Execute → Perceive →
+          Interpret → Compare) applied to a typical task:
+          <strong>“Record that I paid, and see who owes what.”</strong> (Norman,
+          1988; Dix et al., Ch. 9 – evaluation techniques.)
+        </p>
+
+        <table border="1">
+          <caption>
+            Norman’s seven stages applied to the “Who Paid?” / Splitwise context
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Norman’s stage</th>
+              <th scope="col">Without clear design (chaos / ambiguity)</th>
+              <th scope="col">With design for visibility (e.g. Splitwise)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1. Goal</th>
+              <td>
+                “I want to record that I paid” or “I want to know who owes me.”
+              </td>
+              <td>Same goal.</td>
+            </tr>
+            <tr>
+              <th scope="row">2. Plan</th>
+              <td>
+                Unclear: “Do I message everyone? Write it down? Who tracks it?”
+                Plan is ill-defined when the system does not offer a clear
+                method.
+              </td>
+              <td>
+                Clear: “I’ll add an expense in the app and assign who paid; the
+                app will show who owes what.”
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3. Specify</th>
+              <td>
+                Hard to specify actions: no clear “record payment” or “see
+                balance” control; actions are ad hoc (notes, chat, memory).
+              </td>
+              <td>
+                Specify “add expense,” “I paid,” “split by”; interface
+                constrains and guides the action sequence.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4. Execute</th>
+              <td>
+                Execution is scattered (messages, paper, memory); easy to forget
+                or be inconsistent.
+              </td>
+              <td>
+                Execute in one place: tap, fill amount, confirm. System records
+                who paid and updates balances.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5. Perceive</th>
+              <td>
+                State is invisible or distributed: “Who paid?” is in someone’s
+                head or in a long chat. Users cannot perceive the current state
+                at a glance.
+              </td>
+              <td>
+                Perceive clear state: “Ali paid €50”; “You are owed €20”; list
+                of expenses and balances.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6. Interpret</th>
+              <td>
+                Hard to interpret: “Does that message mean they paid? Do I owe
+                them or do they owe me?” Interpretation depends on memory and
+                convention.
+              </td>
+              <td>
+                Interpret from visible state: balances and “who paid” are
+                explicit; interpretation is supported by the representation.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7. Compare</th>
+              <td>
+                Compare outcome to goal is error-prone: “Did we settle up? Who’s
+                left to pay?” Comparison is difficult when state is ambiguous.
+              </td>
+              <td>
+                Compare easily: “Balance €0” or “Settled” vs “You owe €X”; goal
+                (everyone square) can be compared to display.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>
+          Gulf of Execution and Gulf of Evaluation
+          <span class="citation">(Dix et al., Ch. 3, pp. 126–127)</span>
+        </h3>
+        <p>
+          <strong>Gulf of Execution:</strong> When “who paid?” is not supported
+          by the design, the gap between the user’s goal (record payment, get
+          repaid) and the actions available is wide—there may be no clear
+          “record payment” action, or it may be buried. With a design like
+          Splitwise, the gulf narrows: dedicated actions (add expense, I paid,
+          split) map clearly to the goal.
+        </p>
+        <p>
+          <strong>Gulf of Evaluation:</strong> When the system (or the social
+          situation) does not make “who paid” and “who owes what” visible, the
+          Gulf of Evaluation is wide—users cannot easily perceive or interpret
+          the state, so they cannot reliably compare outcome to goal. Feelings
+          like “friends forgot to pay” or “chaos after the trip” often stem from
+          this. Good design makes state and attribution visible (who paid,
+          balances), narrowing the gulf and reducing emotional friction.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          GOMS: Goals, Operators, Methods, Selection Rules
+          <span class="citation">(Dix et al., Ch. 12, pp. 422–430)</span>
+        </h2>
+
+        <p>
+          GOMS models the task structure for expert users (Dix et al., Ch. 12 –
+          cognitive models). Here we compare “settling a group expense” without
+          a clear system vs with a Splitwise-style app.
+        </p>
+
+        <table border="1">
+          <caption>
+            GOMS applied to the “Who Paid?” / group expense task
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">GOMS concept</th>
+              <th scope="col">Without clear design (chaos)</th>
+              <th scope="col">With design for visibility (e.g. Splitwise)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Goal</th>
+              <td>Record-who-paid and Settle-up (top-level goals).</td>
+              <td>Same goals.</td>
+            </tr>
+            <tr>
+              <th scope="row">Method</th>
+              <td>
+                No single agreed method: “message everyone,” “write in notes,”
+                “remember.” Methods are informal and vary by person; no
+                selection rules that the system enforces.
+              </td>
+              <td>
+                Method: Add-expense (enter amount, who paid, split rule) →
+                View-balances. Selection rules: if adding expense → use
+                Add-expense; if checking status → use View-balances. Method is
+                explicit in the interface.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Operators</th>
+              <td>
+                Operators are undefined or heterogeneous (type message, write on
+                paper, recall). No standard sequence; “who paid” is not a
+                first-class operator.
+              </td>
+              <td>
+                Operators: tap, type amount, select “I paid” / split option,
+                confirm. Clear sequence; “record payment” is a primary operator.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">What GOMS highlights</th>
+              <td>
+                Task has no stable method; relative efficiency cannot be
+                predicted. Coordination cost is high and emotional.
+              </td>
+              <td>
+                Task has a defined method; we can analyse efficiency (e.g.
+                number of steps to add expense vs to check balance). GOMS does
+                not model emotion—Norman and evaluation explain why visibility
+                reduces friction.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Summary: How the Two Models Differ on “Who Paid?”</h2>
+        <table border="1">
+          <caption>
+            Differences between Norman and GOMS in the Who Paid? / Splitwise
+            case
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col">What it explains or predicts</th>
+              <th scope="col">Who Paid? / Splitwise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Norman</th>
+              <td>
+                Understanding, errors, feedback, gulfs of execution and
+                evaluation; emotional and social impact of design.
+              </td>
+              <td>
+                Explains why “who paid?” ambiguity causes friction: wide Gulf of
+                Evaluation (cannot perceive/interpret state), wide Gulf of
+                Execution (no clear action to record or see). Design that makes
+                “who paid” and “who owes what” visible narrows both gulfs and
+                supports trust and coordination.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">GOMS</th>
+              <td>
+                Task structure: goals, methods, operators, selection rules;
+                relative efficiency.
+              </td>
+              <td>
+                Without a clear system, there is no stable method; with an app,
+                we can describe Add-expense and View-balances as methods and
+                analyse step count. GOMS does not explain emotional cost—Norman
+                does.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="ref-box">
+        <h2>References</h2>
+        <p>
+          <strong
+            >Dix, A., Finlay, J., Abowd, G. D., &amp; Beale, R. (2004).
+            <cite>Human-Computer Interaction</cite> (3rd ed.). Prentice
+            Hall.</strong
+          >
+        </p>
+        <p>
+          <strong>Chapter 3 – The User (pp. 124–127)</strong> – Norman's seven
+          stages of the action cycle (Goal, Plan, Specify, Execute, Perceive,
+          Interpret, Compare). User understanding and conceptual models.
+          Relevant to understanding how users form goals, execute actions, and
+          perceive and interpret feedback when recording payments and checking
+          balances in Splitwise.
+        </p>
+        <p>
+          <strong>Chapter 12 – Cognitive Models (pp. 422–430)</strong> – GOMS
+          (Goals, Operators, Methods, Selection rules) for task analysis and
+          method description. Relevant to breaking down the "record payment" and
+          "check balance" tasks into methods, operators, and selection rules for
+          expert users.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">Back to Home</a></p>
+      <p><a href="automatic-syringe.html">Automatic Syringe</a></p>
+      <p>&copy; 2026 HCI–CG Course</p>
+    </footer>
+  </body>
+</html>

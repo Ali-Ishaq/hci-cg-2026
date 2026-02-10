@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>10 Common HTML Errors – Lab 01</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        color: #222222;
+        background-color: #ffffff;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        color: #006633;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        color: #663399;
+      }
+
+      .intro-box {
+        background-color: #e7f3ff;
+        color: #222222;
+      }
+
+      .wrong-code {
+        background-color: #f8d7da;
+        color: #222222;
+      }
+
+      .right-code {
+        background-color: #d4edda;
+        color: #222222;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>10 Common HTML Errors</h1>
+      <p>
+        Wrong vs correct HTML to demonstrate semantic structure, accessibility,
+        and Lab 01 rules
+      </p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="concepts.html">Key Concepts</a>
+          <ul>
+            <li><a href="analysis.html">Interaction Analysis</a></li>
+            <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+            <li>
+              <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+            </li>
+            <li><a href="automatic-syringe.html">Automatic Syringe</a></li>
+            <li><a href="who-paid-problem.html">Who Paid Problem</a></li>
+          </ul>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="html-errors.html" aria-current="page">10 HTML Errors</a>
+        </li>
+        <li><a href="assignment01.html">Assignment 01</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="intro-box">
+        <h2>Why This Section</h2>
+        <p>
+          This page shows <strong>10 common HTML mistakes</strong> and their
+          <strong>correct versions</strong>. Each row describes the error, shows
+          the wrong code, and gives the correct HTML. This supports Lab 01
+          learning: semantic structure, navigation, headings, tables, links,
+          images, forms, and accessibility (e.g. <code>aria-current</code>,
+          labels, <code>alt</code>).
+        </p>
+      </section>
+
+      <section>
+        <h2>10 Common HTML Errors and Correct Answers</h2>
+
+        <table border="1">
+          <caption>
+            Common HTML errors and correct markup (Lab 01 scope)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Error / Issue</th>
+              <th scope="col">Wrong HTML</th>
+              <th scope="col">Correct HTML</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                Link directly inside <code>ul</code> (missing <code>li</code>)
+              </td>
+              <td class="wrong-code">
+                <pre><code>&lt;nav&gt;&lt;ul&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/nav&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                Label <code>for</code> does not match input <code>id</code>
+              </td>
+              <td class="wrong-code">
+                <pre><code>&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Heading level skipped (h1 then h3)</td>
+              <td class="wrong-code">
+                <pre><code>&lt;h1&gt;Page Title&lt;/h1&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;h1&gt;Page Title&lt;/h1&gt;
+&lt;h2&gt;Subsection&lt;/h2&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                Table with no <code>caption</code>, no <code>th</code>/<code
+                  >scope</code
+                >
+              </td>
+              <td class="wrong-code">
+                <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;KLM&lt;/td&gt;&lt;td&gt;Time&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;table&gt;
+  &lt;caption&gt;Models and predictions&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th scope="col"&gt;Model&lt;/th&gt;
+    &lt;th scope="col"&gt;Predicts&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;th scope="row"&gt;KLM&lt;/th&gt;
+    &lt;td&gt;Time&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>More than one link with <code>aria-current="page"</code></td>
+              <td class="wrong-code">
+                <pre><code>&lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Multiple <code>h1</code> on one page</td>
+              <td class="wrong-code">
+                <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;h1&gt;Another Title&lt;/h1&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;h2&gt;Another Section&lt;/h2&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Image without <code>alt</code> attribute</td>
+              <td class="wrong-code">
+                <pre><code>&lt;img src="photo.jpg"&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;img src="photo.jpg" alt="Description of the image"&gt;</code></pre>
+                <em>Use <code>alt=""</code> only for decorative images.</em>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Vague link text (“Click here”)</td>
+              <td class="wrong-code">
+                <pre><code>&lt;a href="norman2klm.html"&gt;Click here&lt;/a&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;a href="norman2klm.html"&gt;Norman–GOMS–KLM comparison&lt;/a&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Form control without an associated label</td>
+              <td class="wrong-code">
+                <pre><code>Email: &lt;input type="email" name="email"&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>
+                Using only <code>div</code> for structure (no semantic elements)
+              </td>
+              <td class="wrong-code">
+                <pre><code>&lt;div class="header"&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/div&gt;
+&lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;div class="main"&gt;...&lt;/div&gt;</code></pre>
+              </td>
+              <td class="right-code">
+                <pre><code>&lt;header&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;/header&gt;
+&lt;nav aria-label="Primary navigation"&gt;...&lt;/nav&gt;
+&lt;main&gt;...&lt;/main&gt;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Summary</h2>
+        <p>
+          Avoiding these 10 errors improves clarity, maintainability, and
+          accessibility. Lab 01 requires semantic elements (<code>header</code>,
+          <code>nav</code>, <code>main</code>, <code>section</code>,
+          <code>article</code>, <code>footer</code>), list-based navigation, one
+          <code>h1</code> and no heading skips, proper tables with
+          <code>caption</code> and <code>th</code>/<code>scope</code>,
+          descriptive links, <code>alt</code> on images, and correct use of
+          <code>aria-current</code> and form labels.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">Back to Home</a></p>
+      <p>&copy; 2026 HCI–CG Course</p>
+    </footer>
+  </body>
+</html>

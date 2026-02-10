@@ -1,62 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <!-- Character encoding for consistent text rendering -->
-  <meta charset="UTF-8">
+  <head>
+    <!-- Character encoding for consistent text rendering -->
+    <meta charset="UTF-8" />
 
-  <!-- Page title shown in browser tab and announced by screen readers -->
-  <title>Don Norman – Contact</title>
-</head>
-<body>
+    <!-- Responsive viewport for better accessibility on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Page header: identifies the page purpose -->
-  <header>
-    <h1>Contact</h1>
-  </header>
+    <!-- Minimal, allowed styling for typography and colors -->
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        color: #222222;
+        background-color: #ffffff;
+      }
 
-  <!-- Primary navigation: identical structure across all pages -->
-  <nav aria-label="Primary navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
+      header,
+      nav,
+      main,
+      footer {
+        font-size: 1em;
+      }
 
-      <!-- Current page is indicated using aria-current -->
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      h1 {
+        font-size: 1.8em;
+      }
 
-      <li><a href="analysis.html">Interaction Analysis</a></li>
-      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
-      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+      h1 {
+        font-size: 1.8em;
+        color: #1a3a52;
+      }
 
-    </ul>
-  </nav>
+      h2 {
+        font-size: 1.4em;
+        color: #336666;
+      }
 
-  <!-- Main landmark: primary content of this page -->
-  <main>
-    <form action="#" method="post">
-      
-      <!-- Groups related form controls and provides context -->
-      <fieldset>
-        <legend>Send a Message</legend>
+      fieldset,
+      legend,
+      label {
+        font-size: 1em;
+        color: #222222;
+      }
+    </style>
 
-        <!-- Label explicitly associated with its input -->
-        <label for="subject">Subject</label><br>
-        <input type="text" id="subject" name="subject"><br><br>
+    <!-- Page title shown in browser tab and announced by screen readers -->
+    <title>Don Norman – Contact</title>
+  </head>
+  <body>
+    <!-- Page header: identifies the page purpose -->
+    <header>
+      <h1>Contact</h1>
+    </header>
 
-        <!-- Textarea with clear label for screen readers -->
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+    <!-- Primary navigation: identical structure across all pages -->
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="concepts.html">Key Concepts</a>
+          <ul>
+            <li><a href="analysis.html">Interaction Analysis</a></li>
+            <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+            <li>
+              <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+            </li>
+            <li><a href="automatic-syringe.html">Automatic Syringe</a></li>
+            <li><a href="who-paid-problem.html">Who Paid Problem</a></li>
+          </ul>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="html-errors.html">10 HTML Errors</a></li>
+        <li><a href="assignment01.html">Assignment 01</a></li>
+      </ul>
+    </nav>
 
-        <!-- Submit button is keyboard accessible by default -->
-        <button type="submit">Send</button>
-      </fieldset>
+    <!-- Main landmark: primary content of this page -->
+    <main>
+      <form action="#" method="post">
+        <!-- Groups related form controls and provides context -->
+        <fieldset>
+          <legend>Send a Message</legend>
 
-    </form>
-  </main>
+          <!-- Label explicitly associated with its input -->
+          <label for="subject">Subject</label><br />
+          <input type="text" id="subject" name="subject" /><br /><br />
 
-  <!-- Footer provides supplementary information -->
-  <footer>
-    <p>Keyboard accessible form with screen-reader friendly labels.</p>
-  </footer>
+          <!-- Textarea with clear label for screen readers -->
+          <label for="message">Message</label><br />
+          <textarea id="message" name="message" rows="5" cols="30"></textarea
+          ><br /><br />
 
-</body>
+          <!-- Submit button is keyboard accessible by default -->
+          <button type="submit">Send</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <p><a href="index.html">Back to Home</a></p>
+      <p>
+        &copy; 2026 HCI–CG Course. Form is keyboard accessible with
+        screen-reader friendly labels.
+      </p>
+    </footer>
+  </body>
 </html>

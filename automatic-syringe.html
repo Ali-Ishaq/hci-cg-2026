@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Automatic Syringe – Norman, GOMS, KLM Analysis</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        color: #222222;
+        background-color: #ffffff;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        color: #663399;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        color: #336666;
+      }
+
+      h3 {
+        font-size: 1.1em;
+        color: #006633;
+      }
+
+      .topic-box {
+        background-color: #e7f3ff;
+        color: #222222;
+      }
+
+      .ref-box {
+        background-color: #fff3cd;
+        color: #222222;
+      }
+      .citation {
+        font-weight: normal;
+        font-size: 0.85em;
+        font-style: italic;
+        color: #555555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Automatic Syringe Problem</h1>
+      <p>
+        Setting the dose to 1372: analysis in Norman’s model, GOMS, and KLM (Dix
+        et al., HCI 3rd ed., p. 8)
+      </p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="concepts.html">Key Concepts</a>
+          <ul>
+            <li><a href="analysis.html">Interaction Analysis</a></li>
+            <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+            <li>
+              <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+            </li>
+            <li>
+              <a href="automatic-syringe.html" aria-current="page"
+                >Automatic Syringe</a
+              >
+            </li>
+            <li><a href="who-paid-problem.html">Who Paid Problem</a></li>
+          </ul>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="html-errors.html">10 HTML Errors</a></li>
+        <li><a href="assignment01.html">Assignment 01</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>The Problem (Dix et al., HCI 3rd ed., p. 8 – Figure 0.1)</h2>
+        <p>
+          A <strong>mechanical syringe</strong> was being developed and a
+          prototype was demonstrated to hospital staff. They quickly noticed a
+          <strong>potentially fatal flaw</strong> in its interface. The task is
+          <strong>setting the dose to 1372</strong>. The book compares two
+          interfaces: <strong>before</strong> and <strong>after</strong> user
+          involvement (Dix et al., Design Focus “Quick fixes”; Figure 0.1).
+        </p>
+        <ul>
+          <li>
+            <strong>Before consulting users:</strong> Doses were entered via a
+            <strong>numeric keypad</strong> (like a telephone or calculator).
+            One accidental keypress and the dose could be
+            <strong>out by a factor of 10</strong>. For example, a slip could
+            produce 13672 instead of 1372.
+          </li>
+          <li>
+            <strong>After consulting users:</strong> The production version had
+            <strong
+              >individual increment/decrement buttons for each digit</strong
+            >
+            (four columns, each with + and −). A mistake then affects at most
+            one digit by one unit, not the whole number (more about
+            participatory design in Chapter 13; Dix et al.).
+          </li>
+        </ul>
+        <p>
+          The lesson:
+          <strong>Think “user”, try it out, involve the users, iterate.</strong>
+          Involving actual users (hospital staff) made the fatal flaw visible
+          and led to a safer design.
+        </p>
+      </section>
+
+      <section class="topic-box">
+        <h2>Analysing the Two Interfaces with Norman, GOMS, and KLM</h2>
+        <p>
+          The purpose of Lab 01 is to clearly communicate the
+          <strong>differences between Norman’s model, GOMS, and KLM</strong>.
+          Below, the same task (set dose to 1372) is analysed in all three
+          frameworks for both the keypad design and the increment/decrement
+          design.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          Norman’s Model: The Seven Stages of the Action Cycle
+          <span class="citation">(Dix et al., Ch. 3, pp. 124–127)</span>
+        </h2>
+        <p>
+          Norman’s model describes the user’s journey in
+          <strong>seven stages</strong>: Goal → Plan → Specify → Execute →
+          Perceive → Interpret → Compare (Dix et al., Ch. 3, pp. 124–127). The
+          table below applies these stages to both syringe interfaces.
+        </p>
+
+        <table border="1">
+          <caption>
+            Norman’s seven stages applied to the Automatic Syringe (Before vs
+            After user involvement)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Norman’s stage</th>
+              <th scope="col">Before (numeric keypad)</th>
+              <th scope="col">After (increment/decrement per digit)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1. Goal</th>
+              <td>Set dose to 1372.</td>
+              <td>Set dose to 1372.</td>
+            </tr>
+            <tr>
+              <th scope="row">2. Plan</th>
+              <td>“I will type the four digits on the keypad.”</td>
+              <td>“I will set each digit column to 1, 3, 7, 2 using +/−.”</td>
+            </tr>
+            <tr>
+              <th scope="row">3. Specify</th>
+              <td>
+                User must specify which keys (1, 3, 7, 2) and in what order. One
+                wrong or extra key (e.g. 6 instead of 7, or double 2) changes
+                the outcome drastically.
+              </td>
+              <td>
+                User specifies which digit column and whether to increment or
+                decrement. Actions are constrained: only change one digit at a
+                time by one unit.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4. Execute</th>
+              <td>
+                Press four keys. Simple motor action, but a single slip (wrong
+                key or extra key) can produce e.g. 13672.
+              </td>
+              <td>
+                Multiple button presses per digit. More actions, but each action
+                has a small, predictable effect.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5. Perceive</th>
+              <td>
+                User sees the displayed number (e.g. 13672). The display does
+                not highlight which digit might be wrong.
+              </td>
+              <td>
+                User sees each digit change as they press +/−. Feedback is per
+                digit; each change is visible immediately.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6. Interpret</th>
+              <td>
+                User must interpret “what number is this?” and “is it 1372?” A
+                wrong number can look plausible at a glance.
+              </td>
+              <td>
+                User interprets each digit’s value. Easier to interpret because
+                each digit is set and confirmed separately.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7. Compare</th>
+              <td>
+                User compares display (e.g. 13672) with goal (1372). May not
+                notice the slip; comparison is error-prone.
+              </td>
+              <td>
+                User compares each digit to the intended value. Mismatches are
+                easier to spot (e.g. “that digit should be 7, not 6”).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>
+          Gulf of Execution and Gulf of Evaluation
+          <span class="citation">(Dix et al., Ch. 3, pp. 126–127)</span>
+        </h3>
+        <p>
+          <strong>Gulf of Execution</strong> is the gap between the user’s goal
+          and the actions the system allows. With the <strong>keypad</strong>,
+          the gulf is wide: the user can easily form the wrong intention (e.g.
+          press 6 instead of 7) or make a motor slip (extra key), and the system
+          does not constrain or correct—one slip can put the dose out by a
+          factor of 10. With <strong>increment/decrement</strong>, the gulf is
+          narrower: the interface only allows small steps per digit, so large
+          errors are much harder to make.
+        </p>
+        <p>
+          <strong>Gulf of Evaluation</strong> is the gap between the system’s
+          state and what the user can perceive and interpret. With the
+          <strong>keypad</strong>, the gulf is wide: a wrong number (e.g. 13672)
+          can look plausible; the user may not detect the error before it is too
+          late. With <strong>increment/decrement</strong>, the gulf is narrower:
+          each digit is adjusted and visible separately, so mismatches between
+          goal and display are easier to detect. Norman’s model thus explains
+          why involving users led to a design that narrows both gulfs.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          GOMS: Goals, Operators, Methods, Selection Rules
+          <span class="citation">(Dix et al., Ch. 12, pp. 422–430)</span>
+        </h2>
+        <p>
+          GOMS models the task structure for expert users: what is the goal,
+          what operators (primitive actions) are used, what methods (sequences
+          of subgoals and operators) achieve the goal, and what selection rules
+          choose between methods.
+        </p>
+
+        <table border="1">
+          <caption>
+            GOMS applied to the Automatic Syringe (Before vs After)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">GOMS concept</th>
+              <th scope="col">Before (numeric keypad)</th>
+              <th scope="col">After (increment/decrement per digit)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Goal</th>
+              <td>Set-dose-to-1372 (top-level goal).</td>
+              <td>Set-dose-to-1372 (top-level goal).</td>
+            </tr>
+            <tr>
+              <th scope="row">Method</th>
+              <td>
+                <strong>Keypad-entry:</strong> Subgoals = press key “1”, press
+                key “3”, press key “7”, press key “2”. Sequence of four
+                keystroke operators.
+              </td>
+              <td>
+                <strong>Increment-decrement:</strong> Subgoals =
+                set-digit-1-to-1, set-digit-2-to-3, set-digit-3-to-7,
+                set-digit-4-to-2. Each subgoal is achieved by a sequence of
+                Point + Button (or Keystroke) operators (press + or −
+                repeatedly).
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Operators</th>
+              <td>
+                Keystroke (K) or button press (B): one per digit. Four
+                primitives. A single wrong operator (e.g. K[6] instead of K[7])
+                changes the outcome by a large amount.
+              </td>
+              <td>
+                Point (P), Button (B): many operators (e.g. point to column,
+                press + several times). Each operator changes one digit by one;
+                a wrong operator has bounded effect (one digit off by one).
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Selection rules</th>
+              <td>
+                If dose is entered by keypad → use Keypad-entry method. (Only
+                one method modelled here.)
+              </td>
+              <td>
+                If dose is set by increment/decrement → use Increment-decrement
+                method. (Only one method modelled here.)
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">What GOMS highlights</th>
+              <td>
+                Task is short (4 operators) but
+                <strong>error-sensitive</strong>: one wrong operator → wrong
+                dose, possibly by factor of 10. GOMS does not model perception
+                or evaluation; it assumes the user executes the method.
+              </td>
+              <td>
+                Task has more operators but <strong>error-tolerant</strong>: one
+                wrong operator affects only one digit. GOMS again does not model
+                evaluation; the benefit of the redesign is in the structure of
+                the method (smaller effect per operator).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>
+          KLM: Keystroke-Level Model and Execution Time
+          <span class="citation">(Dix et al., Ch. 12, pp. 436–441)</span>
+        </h2>
+
+        <p>
+          KLM uses primitive operators (K, B, P, H, M, R, etc.) to predict
+          <strong>execution time</strong> for expert, error-free performance. It
+          does not model planning or interpretation; it focuses on the physical
+          and mental preparation for each action (Dix et al., Ch. 12).
+        </p>
+
+        <table border="1">
+          <caption>
+            KLM applied to the Automatic Syringe (Before vs After)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Aspect</th>
+              <th scope="col">Before (numeric keypad)</th>
+              <th scope="col">After (increment/decrement per digit)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Operator sequence (simplified)</th>
+              <td>
+                [M] [K] [K] [K] [K] — one mental preparation then four
+                keystrokes (for 1, 3, 7, 2).
+              </td>
+              <td>
+                Per digit: [M] [P] [B] (or [K]) repeated. E.g. digit 1:
+                [M][P][B] (0 or 1 press); digit 2: [M][P][B][B][B] (2 presses
+                from 1→3); digit 3: [M][P] then 6×[B]; digit 4: [M][P][B]. Many
+                more M, P, B operators.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Predicted time (conceptually)</th>
+              <td>
+                Short: ~4×K + 1×M (e.g. ~1.35 + 4×0.2 ≈ 2.15 s if K≈0.2 s,
+                M≈1.35 s). Fast but brittle.
+              </td>
+              <td>
+                Longer: many M, P, B. E.g. 4×(M+P+B) plus multiple B per digit.
+                Slower for expert, but one “slip” in KLM (one extra or wrong B)
+                changes result by only one unit in one digit.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">What KLM does not model</th>
+              <td>
+                KLM does not model the <strong>consequence of a slip</strong>:
+                that one wrong K can mean 13672 instead of 1372. It only
+                predicts time for correct execution.
+              </td>
+              <td>
+                Same: KLM does not model detection of error or recovery; it only
+                counts operators for the correct sequence. The design’s benefit
+                (bounded error) is about error consequence, not raw time.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Takeaway</th>
+              <td>
+                <strong>Norman</strong> explains why the keypad is dangerous
+                (gulfs, feedback, one slip → big error).
+                <strong>GOMS</strong> shows the method structure (few operators,
+                high error impact). <strong>KLM</strong> predicts the keypad is
+                faster in error-free execution but does not explain the fatal
+                flaw; that requires Norman’s evaluation side and the real-world
+                consequence of a slip.
+              </td>
+              <td>
+                KLM predicts the increment/decrement design is slower in expert,
+                error-free time. The reason to prefer it is safety (Norman:
+                narrower gulfs; GOMS: each operator has bounded effect), not
+                speed.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Summary: How the Three Models Differ on This Problem</h2>
+        <table border="1">
+          <caption>
+            Differences between Norman, GOMS, and KLM in the Automatic Syringe
+            case
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col">What it explains or predicts</th>
+              <th scope="col">Automatic Syringe (keypad vs +/−)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Norman</th>
+              <td>
+                Understanding, errors, feedback, gulfs of execution and
+                evaluation.
+              </td>
+              <td>
+                Keypad: wide gulfs (one slip → wrong dose; hard to notice). +/−:
+                narrower gulfs (constrained actions; per-digit feedback).
+                Explains why user involvement led to a safer design.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">GOMS</th>
+              <td>
+                Task structure: goals, methods, operators, selection rules.
+                Relative efficiency of methods.
+              </td>
+              <td>
+                Keypad: short method (4 operators), but one wrong operator →
+                large error. +/−: longer method, but one wrong operator → small
+                error. Highlights structure and error impact of the method.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">KLM</th>
+              <td>
+                Execution time for expert, error-free performance (primitive
+                operators K, B, P, M, etc.).
+              </td>
+              <td>
+                Keypad: fewer operators → faster predicted time. +/−: more
+                operators → slower. KLM does not predict the fatal flaw; it only
+                predicts time. The design choice (involve users, iterate) is
+                justified by Norman and by the real-world consequence of slips,
+                not by KLM alone.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="ref-box">
+        <h2>References</h2>
+        <p>
+          <strong
+            >Dix, A., Finlay, J., Abowd, G. D., &amp; Beale, R. (2004).
+            <cite>Human-Computer Interaction</cite> (3rd ed.). Prentice
+            Hall.</strong
+          >
+        </p>
+        <p>
+          <strong>Introduction, p. 8, Figure 0.1</strong> – Automatic syringe:
+          setting the dose to 1372. The effect of one key slip before and after
+          user involvement. Design Focus: Quick fixes (Think ‘user’, Try it out,
+          Involve the users, Iterate).
+        </p>
+        <p>
+          <strong>Chapter 3 – The User (pp. 124–127)</strong> – Norman's action
+          cycle and the seven stages of user interaction. Gulf of Execution and
+          Gulf of Evaluation, and how interface design affects both.
+        </p>
+        <p>
+          <strong>Chapter 9 – Evaluation Techniques</strong> – Evaluation
+          techniques; expert analysis (cognitive walkthrough, heuristic
+          evaluation) <span class="citation">(pp.320-327) </span>; Evaluation
+          through user participation (lab and field studies)
+          <span class="citation">(pp. 327-334)</span>. These methods inform why
+          involving users and evaluating the syringe interface led to a safer
+          design.
+        </p>
+        <p>
+          <strong>Chapter 12 – Cognitive Models (pp. 422–430, 436–441)</strong>
+          – GOMS (goals, operators, methods, selection rules; pp. 422–430); KLM
+          (Keystroke-Level Model, primitive operators K, B, P, M, R, etc.;
+          execution-time prediction for expert users; pp. 436–441). See also
+          physical and device models.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">Back to Home</a></p>
+      <p><a href="norman2klm.html">Norman–GOMS–KLM</a></p>
+      <p>&copy; 2026 HCI–CG Course</p>
+    </footer>
+  </body>
+</html>

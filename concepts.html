@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Concepts – HCI Models & Design Principles</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        color: #222222;
+        background-color: #ffffff;
+      }
+
+      h1 {
+        font-size: 1.8em;
+        color: #006633;
+      }
+      h2 {
+        font-size: 1.4em;
+        color: #336666;
+      }
+      h3 {
+        font-size: 1.1em;
+        color: #004d4d;
+      }
+
+      .concept-box {
+        background-color: #e7f3ff;
+        color: #222222;
+      }
+
+      .design-box {
+        background-color: #fff3cd;
+        color: #222222;
+      }
+
+      .case-study-box {
+        background-color: #e8f5e9;
+        color: #222222;
+      }
+
+      .related-links {
+        color: #222222;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Key Concepts in HCI</h1>
+      <p>
+        Core models, frameworks, and design principles for evaluating
+        human–computer interaction
+      </p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="concepts.html" aria-current="page">Key Concepts</a>
+          <ul>
+            <li><a href="analysis.html">Interaction Analysis</a></li>
+            <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+            <li>
+              <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+            </li>
+            <li><a href="automatic-syringe.html">Automatic Syringe</a></li>
+            <li><a href="who-paid-problem.html">Who Paid Problem</a></li>
+          </ul>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="html-errors.html">10 HTML Errors</a></li>
+        <li><a href="assignment01.html">Assignment 01</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Overview</h2>
+        <p>
+          This site explores fundamental HCI concepts from
+          <cite>Human-Computer Interaction</cite> (Dix, Finlay, Abowd, &amp;
+          Beale, 2004, 3rd ed.). We focus on cognitive models that explain how
+          users perceive, interpret, and act within digital systems, and how
+          designers can evaluate and improve interaction.
+        </p>
+      </section>
+
+      <!-- Cognitive & Task Models Section -->
+      <section>
+        <h2>Cognitive &amp; Task Models</h2>
+        <p>
+          These models help us understand and predict user behavior during
+          interaction. They form the foundation for comparing different
+          interface designs and task strategies.
+        </p>
+
+        <section class="concept-box">
+          <h3>Norman's Action Cycle</h3>
+          <p>
+            The <strong>action cycle</strong> (Norman, 1988) is a seven-stage
+            model describing how users achieve goals through interaction:
+          </p>
+          <ul>
+            <li>
+              <strong>Execution side:</strong> Goal → Plan → Specify → Perform
+            </li>
+            <li>
+              <strong>Evaluation side:</strong> Perceive → Interpret → Compare
+            </li>
+          </ul>
+          <p>
+            Two critical concepts emerge from this model: the
+            <strong>Gulf of Execution</strong> (distance between user intention
+            and system actions) and the
+            <strong>Gulf of Evaluation</strong> (distance between system state
+            and user perception/understanding).
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="analysis.html">Interaction Analysis</a> – Comparing
+                Norman vs. GOMS on enabling Wi-Fi
+              </li>
+              <li>
+                <a href="automatic-syringe.html">Automatic Syringe</a> – How
+                design reduces the gulfs
+              </li>
+              <li>
+                <a href="who-paid-problem.html">Who Paid Problem</a> – Social
+                design and the Gulf of Evaluation
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="concept-box">
+          <h3>GOMS (Goals, Operators, Methods, Selection Rules)</h3>
+          <p>
+            <strong>GOMS</strong> provides a structured framework for modeling
+            expert task performance. It decomposes a task into:
+          </p>
+          <ul>
+            <li><strong>Goals:</strong> What the user wants to achieve</li>
+            <li>
+              <strong>Operators:</strong> Atomic actions (keystroke, mouse
+              click, cognitive step)
+            </li>
+            <li>
+              <strong>Methods:</strong> Sequences of operators and subgoals that
+              accomplish a goal
+            </li>
+            <li>
+              <strong>Selection Rules:</strong> Decision logic for choosing
+              among multiple methods
+            </li>
+          </ul>
+          <p>
+            GOMS is especially useful for comparing interface alternatives and
+            predicting relative task efficiency.
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="analysis.html">Interaction Analysis</a> – GOMS
+                decomposition of Wi-Fi settings
+              </li>
+              <li>
+                <a href="automatic-syringe.html">Automatic Syringe</a> – How the
+                "tuning model" reduces operator count
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="concept-box">
+          <h3>KLM (Keystroke-Level Model)</h3>
+          <p>
+            The <strong>Keystroke-Level Model</strong> is a specialized,
+            quantitative instance of GOMS that predicts
+            <strong>execution time</strong>
+            for expert, error-free users. It uses six primitive operators:
+          </p>
+          <ul>
+            <li><strong>K:</strong> Keystroke</li>
+            <li><strong>B:</strong> Button press</li>
+            <li><strong>P:</strong> Pointing (mouse move)</li>
+            <li>
+              <strong>H:</strong> Homing (moving hand to keyboard or mouse)
+            </li>
+            <li><strong>D:</strong> Drawing (e.g. line segment)</li>
+            <li><strong>M:</strong> Mental operator (cognitive preparation)</li>
+          </ul>
+          <p>
+            Each operator has an empirically derived execution time (in
+            seconds). KLM does <strong>not</strong> model planning, learning, or
+            error recovery.
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="norman2klm.html">Norman–GOMS–KLM</a> – Complete
+                three-model comparison with KLM operators and timings
+              </li>
+              <li>
+                <a href="automatic-syringe.html">Automatic Syringe</a> –
+                Quantitative comparison of "before" vs. "after" design
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- Design Principles Section -->
+      <section>
+        <h2>Design Principles &amp; Heuristics</h2>
+
+        <section class="design-box">
+          <h3>Schneiderman's Eight Golden Rules of Interface Design</h3>
+          <p>
+            <strong>Shneiderman &amp; Plaisant</strong> (2010, adapted from
+            Shneiderman, 1989) offer eight design principles to support
+            usability and user satisfaction:
+          </p>
+          <ol>
+            <li>
+              <strong>Strive for consistency</strong> – Consistent sequences,
+              terminology, and layout reduce cognitive load
+            </li>
+            <li>
+              <strong>Enable frequent users to use shortcuts</strong> – Power
+              users need accelerators (hotkeys, abbreviations) for efficiency
+            </li>
+            <li>
+              <strong>Offer informative feedback</strong> – Users must perceive
+              and understand system state at all times
+            </li>
+            <li>
+              <strong>Design dialogs to yield closure</strong> – Clear
+              beginning, middle, and end; confirm completion
+            </li>
+            <li>
+              <strong>Prevent errors</strong> – Make errors unlikely or
+              automatically recoverable
+            </li>
+            <li>
+              <strong>Permit easy reversal of actions</strong> – Undo and redo
+              reduce anxiety and encourage exploration
+            </li>
+            <li>
+              <strong>Support locus of control</strong> – Users should feel in
+              control; avoid modes that restrict interaction
+            </li>
+            <li>
+              <strong>Reduce short-term memory load</strong> – Keep menus
+              visible, label options, minimize recall demands
+            </li>
+          </ol>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+                – In-depth analysis of these rules applied to the Automatic
+                Syringe redesign
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- Case Studies Section -->
+      <section>
+        <h2>Case Studies &amp; Applications</h2>
+        <p>
+          Real-world examples demonstrate how these models and principles work
+          in practice and reveal the consequences of good and poor interaction
+          design.
+        </p>
+
+        <section class="case-study-box">
+          <h3>Automatic Syringe: From Calculator to Controller</h3>
+          <p>
+            A medical syringe for delivering precise doses is redesigned based
+            on user feedback. The original interface uses a numeric keypad
+            (error-prone; one slip can multiply dose by 10×). The improved
+            interface uses digit-specific increment/decrement buttons, making
+            errors local and recoverable. This case illustrates participatory
+            design, the gulfs of execution and evaluation, and how interface
+            constraints can prevent catastrophic user error.
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="automatic-syringe.html">Automatic Syringe</a> – Full
+                analysis in Norman, GOMS, and KLM
+              </li>
+              <li>
+                <a href="shneiderman-golden-rules.html">Schneiderman's Rules</a>
+                – How the redesign satisfies each golden rule
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="case-study-box">
+          <h3>The "Who Paid?" Problem: Splitwise Social Coordination</h3>
+          <p>
+            <strong>Splitwise</strong> is a social app for expense sharing among
+            friends. The "Who Paid?" problem arises when the interface fails to
+            make shared state clear: "Who paid? Who owes? Is it settled?" Poor
+            design widens the Gulf of Evaluation, creating emotional friction
+            and trust erosion. This case shows how interaction design is not
+            just about tasks, but also about social and emotional consequences.
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="who-paid-problem.html">Who Paid Problem</a> – Detailed
+                scenarios and analysis of social coordination
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="case-study-box">
+          <h3>iPhone vs. Samsung: Enabling Wi-Fi</h3>
+          <p>
+            A practical comparison of two smartphone interfaces for the same
+            task. This analysis demonstrates how GOMS decomposition reveals
+            differences in method selection, operator count, and mental
+            workload—and why one design may be more efficient than another, even
+            when both are "correct."
+          </p>
+          <div class="related-links">
+            <strong>See also:</strong>
+            <ul>
+              <li>
+                <a href="analysis.html">Interaction Analysis</a> – Detailed GOMS
+                and Norman model analysis of Wi-Fi settings
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- Summary Section -->
+      <section>
+        <h2>How These Concepts Connect</h2>
+        <p>
+          <strong>Cognitive models</strong> (Norman's action cycle, GOMS, KLM)
+          let us understand and predict user interaction.
+        </p>
+        <p>
+          <strong>Design principles</strong> (Schneiderman's eight rules)
+          provide actionable guidance for making interfaces usable and
+          satisfying.
+        </p>
+        <p>
+          <strong>Case studies</strong> show how models and principles apply in
+          real situations—and what goes wrong when they're ignored.
+        </p>
+        <p>
+          Together, they form a framework for
+          <strong>thinking before sketching</strong>: analyzing user tasks,
+          reasoning about interface alternatives, and iterating toward designs
+          that serve users well.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">Back to Home</a></p>
+      <p>&copy; 2026 HCI–CG Course</p>
+    </footer>
+  </body>
+</html>
