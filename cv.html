@@ -46,10 +46,42 @@
         font-size: 1.1em;
         color: #2d5f5f;
       }
+
+      section {
+        background-color: #f5f5f5;
+      }
+
+      section:first-of-type {
+        background-color: #e8f4f8;
+      }
+
+      section:nth-of-type(2) {
+        background-color: #f0ece4;
+      }
+
+      section:nth-of-type(3) {
+        background-color: #e8f4f8;
+      }
+
+      section:nth-of-type(4) {
+        background-color: #f0ece4;
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      ul li {
+        margin-bottom: 0.5em;
+      }
+
+      article {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
     </style>
 
     <!-- Page title shown in browser tab and announced by screen readers -->
-    <title>Don Norman – CV</title>
+    <title>Ali Ishaq – CV</title>
   </head>
   <body>
     <!-- Page header: identifies the page -->
@@ -83,31 +115,132 @@
     <!-- Main landmark: unique content of this page -->
     <main>
       <section>
-        <h1>Don Norman</h1>
-        <p>Human–Computer Interaction Philosopher</p>
-        <img src="norman.jpg" alt="Portrait of Don Norman" />
+        <h1>Ali Ishaq</h1>
+        <p>Full Stack Web3 Engineer</p>
       </section>
       <section>
         <h2>Education</h2>
+        <article>
+          <h3>Bachelor's of Computer Science</h3>
+          <ul>
+            <li>
+              Bachelor’s of Science in Computer Science (BSCS)<br />
+              University of Karachi (UoK)<br />
+              2024-2027 (Expected)
+            </li>
+            <li>
+              Intermediate in Computer Science (ICS)<br />
+              Board of Intermediate Education, Karachi (BIEK)<br />
+              2021-2023
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Work Experience & Projects</h2>
+
         <ul>
-          <li>PhD in Psychology – University of Pennsylvania</li>
-          <li>BSc in Engineering – MIT</li>
+          <li>
+            <h3>AI Pitchroom</h3>
+            <p>Full Stack Engineer</p>
+            <ul>
+              <li>
+                Engineered the frontend for an AI-driven app and adapted it into
+                a mini-app for Farcaster clients using Base MiniKit
+              </li>
+              <li>
+                Integrated Zora Coin API for tokenization of user's in-app
+                generated content as creator coins
+              </li>
+              <li>Integrated TikTok's Media Posting API</li>
+              <li>Developed custom APIs for core app features</li>
+              <li>
+                Implemented web3 wallets and API integrations and refactored
+                backend code
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>To Da Moon</h3>
+            <p>Full Stack Engineer</p>
+            <ul>
+              <li>
+                Worked on full-stack development of a Web3 & AI based platform
+              </li>
+              <li>
+                Handled the entire frontend and integrated Privy for user
+                authentication
+              </li>
+              <li>
+                Implemented API integrations and used The Graph to fetch and
+                display on-chain data
+              </li>
+              <li>Built supporting backend logic to automate media workflow</li>
+            </ul>
+          </li>
+
+          <li>
+            <h3>AI Shark Tank</h3>
+            <p>Frontend Engineer</p>
+            <ul>
+              <li>Developed the frontend for an AI-focused platform</li>
+              <li>
+                Integrated wallet authentication, APIs, and The Graph to display
+                onchain project data
+              </li>
+              <li>Created a clean and responsive interface</li>
+              <li>
+                Ensured seamless interaction between frontend and backend
+                services
+              </li>
+            </ul>
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2>Work Experience</h2>
-
-        <!-- Each role is grouped as a separate content unit -->
-        <article>
-          <h3>Professor of Cognitive Science</h3>
-          <p>University of California, San Diego</p>
-        </article>
-
-        <article>
-          <h3>Director, Design Lab</h3>
-          <p>Founder of the Nielsen Norman Group</p>
-        </article>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>
+            <h3>Web3 & Blockchain</h3>
+            <ul>
+              <li>Ethers.js</li>
+              <li>Wagmi</li>
+              <li>The Graph</li>
+              <li>Privy</li>
+              <li>Base MiniKit</li>
+              <li>Zora Coin SDK</li>
+              <li>Wallet Integration</li>
+              <li>EVM Smart Contract Integration</li>
+            </ul>
+          </li>
+          <li>
+            <h3>MERN Stack</h3>
+            <ul>
+              <li>TypeScript</li>
+              <li>ReactJS</li>
+              <li>MongoDB</li>
+              <li>PostgreSQL</li>
+              <li>GraphQL</li>
+              <li>ExpressJS</li>
+              <li>Socket.io</li>
+              <li>RTK / RTK Query</li>
+              <li>Tailwind CSS</li>
+              <li>React Router</li>
+              <li>Shadcn UI</li>
+            </ul>
+          </li>
+          <li>
+            <h3>AI Integration</h3>
+            <ul>
+              <li>LangChain.js</li>
+              <li>OpenAI API</li>
+              <li>RAG Development</li>
+            </ul>
+          </li>
+        </ul>
       </section>
     </main>
 
